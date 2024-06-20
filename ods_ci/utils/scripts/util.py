@@ -87,6 +87,7 @@ def oc_login(ocp_console_url, username, password, timeout=600):
     """
     cluster_api_url = ocp_console_url.replace("console-openshift-console.apps", "api")
     cluster_api_url = re.sub(r"/$", "", cluster_api_url) + ":6443"
+    cluster_api_url = "https://api.rosahcp210.vv7z.p3.openshiftapps.com:443"
     cmd = "oc login -u {} -p {} {} --insecure-skip-tls-verify=true".format(username, password, cluster_api_url)
     count = 0
     chk_flag = 0
